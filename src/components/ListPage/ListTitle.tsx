@@ -1,15 +1,20 @@
 import styled from "styled-components";
 import arrow from "../../assets/rightArrow.svg";
+import { useRecoilValue } from "recoil";
+import { titleState } from "../../recoil";
 
 export const ListTitle = () => {
+	const title = useRecoilValue(titleState);
 	return (
 		<Container>
 			<div className="categoryTitle">
 				Country <img src={arrow} alt=">" />
-				France
+				{title.country}
 			</div>
 			<div className="Title">
-				<div className="mainTitle">France Wines</div>
+				<div className="mainTitle">
+					{title.country} {title.wine}
+				</div>
 				<p className="description">
 					Your Wine Journey Begins Here | Explore the Wine Test
 					<br />
