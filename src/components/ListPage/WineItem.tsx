@@ -1,19 +1,24 @@
 import styled from "styled-components";
-import wine from "../../assets/wine.png";
+import { WineType } from "../../types";
+import { useNavigate } from "react-router-dom";
 
-export const WineItem = () => {
+export const WineItem = ({ wine }: { wine: WineType }) => {
+	const navigate = useNavigate();
+	const spaceToDetailPage = (slug: string) => {
+		navigate(`/detail/${slug}`);
+	};
 	return (
-		<Container>
-			<img src={wine} alt="wine" />
+		<Container onClick={() => spaceToDetailPage(wine.slug)}>
+			<img src={`https://image.veenoverse.com${wine.image.thumb}`} alt="wine" />
 			<div className="wineContents">
-				<div className="title">Le Corti Don Tommaso Chianti Classico 2016</div>
+				<div className="title">{wine.name}</div>
 				<div className="middleContents flex">
-					<div className="price">$28.6</div>
-					<div className="volume">750ml</div>
+					<div className="price">${wine?.price?.value || 0}</div>
+					<div className="volume">{wine.volume}ml</div>
 				</div>
 				<div className="lastContents flex">
-					<div className="year">2017</div>
-					<div className="country">Spain</div>
+					<div className="year">{wine.vintage}</div>
+					<div className="country">{wine.country.name}</div>
 				</div>
 			</div>
 		</Container>
@@ -25,6 +30,12 @@ const Container = styled.div`
 	gap: 14px;
 	border-bottom: 1px solid #232323;
 	padding-bottom: 17px;
+	cursor: pointer;
+	img {
+		width: 45px;
+		height: 172px;
+		padding: 0 30px;
+	}
 	.flex {
 		display: flex;
 	}
