@@ -1,3 +1,13 @@
+import Category from "../components/ListPage/Category";
+import { ListTitle } from "../components/ListPage/ListTitle";
+import { WineList } from "../components/ListPage/WineList";
+
 export const ListPage = () => {
-	return <div>ListPage</div>;
+	return (
+		<>
+			<Category />
+			<ListTitle />
+			<WineList />
+		</>
+	);
 };
