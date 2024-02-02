@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ListPage } from "../pages/ListPage";
-import Layout from "../layout";
 import { DetailPage } from "../pages/DetailPage";
+import { Layout } from "../layout/Layout";
 
 export const Router = () => {
   return (
