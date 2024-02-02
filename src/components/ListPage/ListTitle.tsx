@@ -26,6 +26,7 @@ export const ListTitle = () => {
 };
 const Container = styled.div`
   margin-top: 16px;
+  padding: 0 16px 0 13px;
   .categoryTitle {
     display: flex;
     line-height: 25px;

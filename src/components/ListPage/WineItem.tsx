@@ -1,11 +1,15 @@
 import styled from "styled-components";
 import { WineType } from "../../types";
 import { useNavigate } from "react-router-dom";
+import { useSetRecoilState } from "recoil";
+import { pageNameState } from "../../store/atom";
 
 export const WineItem = ({ wine }: { wine: WineType }) => {
   const navigate = useNavigate();
+  const setPageName = useSetRecoilState(pageNameState);
   const spaceToDetailPage = (slug: string) => {
     navigate(`/detail/${slug}`);
+    setPageName("detail");
   };
   return (
     <Container onClick={() => spaceToDetailPage(wine.slug)}>

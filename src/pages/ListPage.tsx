@@ -1,15 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Category from "../components/ListPage/Category";
 import { ListTitle } from "../components/ListPage/ListTitle";
 import { WineList } from "../components/ListPage/WineList";
 import { getWineList } from "../apis/listPage";
 import { useRecoilState, useSetRecoilState } from "recoil";
-import { loadingState, titleState, wineListState } from "../store/atom";
+import { loadingState, pageNameState, pageState, titleState, wineListState } from "../store/atom";
 import { Pagination } from "../components/ListPage/Pagination";
 import { Loading } from "./common/Loading";
 
 export const ListPage = () => {
-  const [page, setPage] = useState<number>(1);
+  const [page, setPage] = useRecoilState(pageState);
+  const setPageName = useSetRecoilState(pageNameState);
   const setTitle = useSetRecoilState(titleState);
   const setWineList = useSetRecoilState(wineListState);
   const [loading, setLoading] = useRecoilState(loadingState);
@@ -26,6 +27,7 @@ export const ListPage = () => {
   };
   useEffect(() => {
     setLoading(true);
+    setPageName("list");
     ListPageRendering();
   }, [page]);
 
