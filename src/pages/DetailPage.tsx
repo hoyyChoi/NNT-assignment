@@ -1,13 +1,21 @@
 import styled from "styled-components";
+import { WineInfo } from "../components/DetailPage/WineInfo";
+import { DetailCategory } from "../components/DetailPage/DetailCategory";
+import { useState } from "react";
+import { DetailInfo } from "../components/DetailPage/DetailInfo";
+import { DetailPrice } from "../components/DetailPage/DetailPrice";
 
 export const DetailPage = () => {
-  return <Container>NOT FOUND</Container>;
+  const [category, setCategory] = useState<string>("info");
+  return (
+    <Container>
+      <WineInfo />
+      <DetailCategory category={category} setCategory={setCategory} />
+      {category === "info" ? <DetailInfo /> : <DetailPrice />}
+    </Container>
+  );
 };
 
 const Container = styled.div`
-  font-size: 30px;
-  font-weight: 600;
-  color: red;
-  text-align: center;
-  margin-top: 150px;
+  padding: 8px 15px 0;
 `;
