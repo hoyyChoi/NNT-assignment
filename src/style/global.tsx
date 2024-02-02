@@ -3,23 +3,8 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle`
 
 
-@font-face {
-	font-family: 'Lexend';
-	font-weight: 100 800;
-	font-style: normal;
-	font-display: swap;
-	src: local('Lexend'), url('./font/Lexend-VariableFont_wght.ttf') format('font-ttf-variations');
-}
-@font-face {
-	font-family: 'SorceSans3';
-	font-weight: 100 800;
-	font-style: normal;
-	font-display: swap;
-	src: local('SorceSans3'), url('./font/SourceSans3-VariableFont_wght.ttf') format('font-ttf-variations');
-}
-
 *{
-	font-family: "SorceSans3", sans-serif;
+	font-family: 'Source Sans 3', sans-serif;
 }
 
 html, body, div, span, applet, object, iframe,
