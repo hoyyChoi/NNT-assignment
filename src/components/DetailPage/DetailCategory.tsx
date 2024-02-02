@@ -20,7 +20,7 @@ export const DetailCategory = ({ category, setCategory }: categoryProps) => {
 
 const Container = styled.div`
   display: flex;
-  margin-top: 16px;
+  margin-top: 26px;
   div {
     font-weight: 600;
     width: 50%;
