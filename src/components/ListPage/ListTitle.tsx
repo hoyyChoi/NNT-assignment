@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import arrow from "../../assets/rightArrow.svg";
 import { useRecoilValue } from "recoil";
-import { titleState } from "../../recoil";
+import { titleState } from "../../store/atom";
 
 export const ListTitle = () => {
   const title = useRecoilValue(titleState);

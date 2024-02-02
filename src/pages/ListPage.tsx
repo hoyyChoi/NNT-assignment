@@ -4,7 +4,7 @@ import { ListTitle } from "../components/ListPage/ListTitle";
 import { WineList } from "../components/ListPage/WineList";
 import { getWineList } from "../apis/listPage";
 import { useRecoilState, useSetRecoilState } from "recoil";
-import { loadingState, titleState, wineListState } from "../recoil";
+import { loadingState, titleState, wineListState } from "../store/atom";
 import { Pagination } from "../components/ListPage/Pagination";
 import { Loading } from "./common/Loading";
 
